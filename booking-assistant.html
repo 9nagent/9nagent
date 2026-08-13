@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دستیار نوبت | 9nagent — نوبت‌دهی هوشمند و کاهش غیبت</title>
+<meta name="description" content="رزرو گفتگومحور، سکانس یادآوری، امتیاز ریسک غیبت، لیست انتظار خودکار و چرخه‌ی بازگشت مشتری برای کلینیک، مطب، سالن و مراکز خدماتی — ۲۹ ماژول.">
+<meta name="theme-color" content="#eef1f6">
+<meta property="og:title" content="دستیار نوبت | 9nagent — نوبت‌دهی هوشمند و کاهش غیبت">
+<meta property="og:description" content="رزرو گفتگومحور، سکانس یادآوری، امتیاز ریسک غیبت، لیست انتظار خودکار و چرخه‌ی بازگشت مشتری برای کلینیک، مطب، سالن و مراکز خدماتی — ۲۹ ماژول.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<link rel="preload" href="assets/fonts/Vazirmatn-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235b7cf7'/%3E%3Cstop offset='100%25' stop-color='%239a6cf5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 3.2l7.2 4.2v9.2L12 20.8 4.8 16.6V7.4z' fill='none' stroke='url(%23g)' stroke-width='1.6'/%3E%3Ccircle cx='12' cy='11.4' r='3.2' fill='none' stroke='url(%23g)' stroke-width='1.6'/%3E%3C/svg%3E">
+
+</head>
+<body>
+<div class="bg-field"></div>
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b7cf7"/>
+      <stop offset="52%" stop-color="#2ec2d4"/>
+      <stop offset="100%" stop-color="#9a6cf5"/>
+    </linearGradient>
+    <linearGradient id="pgw" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffa458"/>
+      <stop offset="60%" stop-color="#ff6f95"/>
+      <stop offset="100%" stop-color="#9a6cf5"/>
+    </linearGradient>
+    <linearGradient id="pgg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#20b884"/>
+      <stop offset="100%" stop-color="#2ec2d4"/>
+    </linearGradient>
+    <linearGradient id="flow1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5b7cf7"/><stop offset="100%" stop-color="#2ec2d4"/>
+    </linearGradient>
+    <linearGradient id="flow2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2ec2d4"/><stop offset="100%" stop-color="#9a6cf5"/>
+    </linearGradient>
+    <linearGradient id="flow3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9a6cf5"/><stop offset="100%" stop-color="#ff6f95"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="9nagent">
+      <span class="logo-mark"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M12 3.2l7.2 4.2v9.2L12 20.8 4.8 16.6V7.4z"/><path d="M12 8.2a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 3.2-3.2c0-2.6-1.6-3.2-3.2-3.2z"/><path d="M14.6 13.4l-2.4 4.2"/></svg></span>
+      <span class="logo-word">9nagent</span>
+    </a>
+    <nav class="nav-links"><a href="index.html">خانه</a><a href="lead-engine.html">موتور سرنخ</a><a href="advisor-assistant.html">دستیار مشاور</a><a href="booking-assistant.html" class="active">دستیار نوبت</a><a href="about.html">چرا ما</a><a href="contact.html">تماس</a></nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary btn-sm">دموی رایگان <svg class="ico arrow-r" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+      <button class="nav-toggle" aria-label="منو"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="nav-mobile">
+  <a href="index.html">خانه</a><a href="lead-engine.html">موتور سرنخ</a><a href="advisor-assistant.html">دستیار مشاور</a><a href="booking-assistant.html" class="active">دستیار نوبت</a><a href="about.html">چرا ما</a><a href="contact.html">تماس</a>
+  <a href="contact.html" class="btn btn-primary btn-block">درخواست دموی رایگان</a>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow rv"><span class="dot"></span>محصول ۰۳ · ۲۹ ماژول</div>
+        <h1 class="rv rv-d1">نوبت‌دهی و<br><span class="gtext">کاهش غیبت</span></h1>
+        <p class="lead rv rv-d2">این محصول با حساب‌وکتاب فروخته می‌شود، نه با شعار. کلینیکی که بیست درصد غیبت دارد، خودش می‌داند هر ماه چقدر ضرر می‌کند. ما آن عدد را برمی‌داریم و کوچکش می‌کنیم.</p>
+        <div class="hero-actions rv rv-d3">
+          <a href="contact.html" class="btn btn-primary btn-lg">دریافت قیمت <svg class="ico arrow-r" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+          <a href="#catalog" class="btn btn-glass btn-lg">دیدن ۲۹ ماژول</a>
+        </div>
+        <div class="hero-stats rv rv-d4">
+          <div class="hstat"><div class="n">۴۸ / ۲۴ / ۳</div><div class="l">سکانس یادآوری، ساعت قبل</div></div>
+          <div class="hstat"><div class="n">لیست انتظار</div><div class="l">جای خالی پیشنهاد می‌شود</div></div>
+          <div class="hstat"><div class="n">بدون اپ</div><div class="l">رزرو در دل مکالمه</div></div>
+        </div>
+      </div>
+      <div class="rv rv-d2">
+        <div class="fig"><div class="fig-cap">جای خالی چطور پر می‌شود</div><svg viewBox="-6 10 720 320" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid meet" style="font-size:12.41px"><text x="700" y="34" class="d-sub" text-anchor="start" direction="rtl">تقویم امروز</text><rect x="470" y="56" width="230" height="32" rx="10" fill="url(#pg)" opacity=".16"/><rect x="470" y="56" width="230" height="32" rx="10" fill="none" stroke="url(#pg)" stroke-width="1" opacity=".4"/><text x="686" y="77" class="d-sub" text-anchor="start" direction="rtl">رزرو شده</text><text x="466" y="77" class="d-label" text-anchor="end" direction="ltr">۰۹:۰۰</text><rect x="470" y="98" width="230" height="32" rx="10" fill="url(#pg)" opacity=".16"/><rect x="470" y="98" width="230" height="32" rx="10" fill="none" stroke="url(#pg)" stroke-width="1" opacity=".4"/><text x="686" y="119" class="d-sub" text-anchor="start" direction="rtl">رزرو شده</text><text x="466" y="119" class="d-label" text-anchor="end" direction="ltr">۱۰:۳۰</text><rect x="470" y="140" width="230" height="32" rx="10" fill="none" stroke="#ff6f95" stroke-width="1.4" stroke-dasharray="5 4" opacity=".8"/><text x="686" y="161" class="d-sub" text-anchor="start" direction="rtl" fill="#e0507c">خالی — درآمد از دست رفته</text><path d="M470 156 C 430 156, 420 160, 380 160" class="d-link"/><path d="M470 156 C 430 156, 420 160, 380 160" class="d-flow d-pulse" stroke="url(#flow3)" stroke-width="2.4" style="animation-delay:0.6s;animation-duration:3.4s"/><text x="466" y="161" class="d-label" text-anchor="end" direction="ltr">۱۲:۰۰</text><rect x="470" y="182" width="230" height="32" rx="10" fill="url(#pg)" opacity=".16"/><rect x="470" y="182" width="230" height="32" rx="10" fill="none" stroke="url(#pg)" stroke-width="1" opacity=".4"/><text x="686" y="203" class="d-sub" text-anchor="start" direction="rtl">رزرو شده</text><text x="466" y="203" class="d-label" text-anchor="end" direction="ltr">۱۴:۰۰</text><rect x="470" y="224" width="230" height="32" rx="10" fill="none" stroke="#ff6f95" stroke-width="1.4" stroke-dasharray="5 4" opacity=".8"/><text x="686" y="245" class="d-sub" text-anchor="start" direction="rtl" fill="#e0507c">خالی — درآمد از دست رفته</text><path d="M470 240 C 430 240, 420 160, 380 160" class="d-link"/><path d="M470 240 C 430 240, 420 160, 380 160" class="d-flow d-pulse" stroke="url(#flow3)" stroke-width="2.4" style="animation-delay:1.2s;animation-duration:3.4s"/><text x="466" y="245" class="d-label" text-anchor="end" direction="ltr">۱۵:۳۰</text><rect x="470" y="266" width="230" height="32" rx="10" fill="url(#pg)" opacity=".16"/><rect x="470" y="266" width="230" height="32" rx="10" fill="none" stroke="url(#pg)" stroke-width="1" opacity=".4"/><text x="686" y="287" class="d-sub" text-anchor="start" direction="rtl">رزرو شده</text><text x="466" y="287" class="d-label" text-anchor="end" direction="ltr">۱۷:۰۰</text><rect x="196" y="112" width="184" height="96" rx="22" fill="rgba(255,255,255,.96)" stroke="url(#pg)" stroke-width="1.7"/><g transform="translate(276,130) scale(1.0)" stroke="url(#pg)" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6z"/><path d="M10.3 20a2 2 0 0 0 3.4 0"/></g><text x="288" y="178" class="d-label" text-anchor="middle" direction="rtl">اعلان به لیست انتظار</text><text x="288" y="194" class="d-sub" text-anchor="middle" direction="rtl">نوبت به اولین تأییدکننده</text><path d="M196 160 H 158" class="d-link"/><path d="M196 160 H 158" class="d-flow d-pulse" stroke="url(#flow2)" stroke-width="2.4" style="animation-delay:0.5s;animation-duration:3.4s"/><rect x="0" y="112" width="158" height="96" rx="20" fill="url(#pgg)" opacity=".10"/><rect x="0" y="112" width="158" height="96" rx="20" fill="none" stroke="url(#pgg)" stroke-width="1.6"/><g transform="translate(65,130) scale(1.0)" stroke="url(#pgg)" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></g><text x="79" y="178" class="d-label" text-anchor="middle" direction="rtl">جای خالی پر شد</text><text x="79" y="194" class="d-sub" text-anchor="middle" direction="rtl">به‌طور میانگین در چند دقیقه</text></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-sm"><div class="wrap">
+  
+<div class="grid g-2 mb-40" style="align-items:start">
+  <div class="rv">
+    <div class="eyebrow"><span class="dot"></span>مسئله</div>
+    <h2>غیبت تصادفی نیست — الگو دارد و قابل پیش‌بینی است</h2>
+  </div>
+  <div class="rv rv-d1"><p class="lead mb-16">ساعت نوبت، فاصله‌ی زمانی تا نوبت، نوع خدمت و سابقه‌ی مراجع، همگی روی احتمال غیبت اثر دارند. وقتی بدانید کدام نوبت پرریسک است، لازم نیست برای همه هزینه کنید؛ فقط روی همان‌ها مداخله می‌کنید.</p><p class="lead mb-16">برای موارد پرریسک: تماس انسانی، درخواست بیعانه یا رزرو مضاعف کنترل‌شده. برای بقیه، همان سکانس یادآوری کافی است. و لغو را آسان می‌کنیم — چون لغو ۲۴ ساعت قبل قابل جبران است و غیبت ناگهانی نه.</p></div>
+</div>
+<div class="fig rv rv-d2"><div class="fig-cap">نردبان یادآوری و تأیید</div><svg viewBox="100 110 580 200" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid meet" style="font-size:10.0px"><path d="M660 210 H 150" stroke="rgba(11,16,30,.12)" stroke-width="2"/><path d="M660 210 H 150" class="d-flow d-pulse" stroke="url(#flow1)" stroke-width="3" style="animation-delay:0s;animation-duration:4.2s"/><circle cx="620" cy="210" r="9" fill="#fff" stroke="url(#pg)" stroke-width="2.6" class="d-blip" style="animation-delay:0.0s"/><rect x="548" y="130" width="144" height="56" rx="16" class="d-node"/><text x="620" y="154" class="d-label" text-anchor="middle" direction="rtl">۴۸ ساعت قبل</text><text x="620" y="171" class="d-sub" text-anchor="middle" direction="rtl">یادآوری اول</text><circle cx="450" cy="210" r="9" fill="#fff" stroke="url(#pg)" stroke-width="2.6" class="d-blip" style="animation-delay:0.4s"/><rect x="378" y="130" width="144" height="56" rx="16" class="d-node"/><text x="450" y="154" class="d-label" text-anchor="middle" direction="rtl">۲۴ ساعت قبل</text><text x="450" y="171" class="d-sub" text-anchor="middle" direction="rtl">تأیید با یک پاسخ</text><circle cx="280" cy="210" r="9" fill="#fff" stroke="url(#pg)" stroke-width="2.6" class="d-blip" style="animation-delay:0.8s"/><rect x="208" y="130" width="144" height="56" rx="16" class="d-node"/><text x="280" y="154" class="d-label" text-anchor="middle" direction="rtl">۳ ساعت قبل</text><text x="280" y="171" class="d-sub" text-anchor="middle" direction="rtl">یادآوری نهایی + مسیر</text><circle cx="110" cy="210" r="9" fill="#fff" stroke="url(#pg)" stroke-width="2.6" class="d-blip" style="animation-delay:1.2000000000000002s"/><rect x="38" y="130" width="144" height="56" rx="16" class="d-node"/><text x="110" y="154" class="d-label" text-anchor="middle" direction="rtl">لحظه‌ی نوبت</text><text x="110" y="171" class="d-sub" text-anchor="middle" direction="rtl">حضور</text><rect x="150" y="244" width="510" height="52" rx="16" fill="url(#pgg)" opacity=".09"/><rect x="150" y="244" width="510" height="52" rx="16" fill="none" stroke="url(#pgg)" stroke-width="1.4"/><text x="642" y="266" class="d-label" text-anchor="start" direction="rtl">هر کس تأیید نکند، علامت ریسک می‌خورد</text><text x="642" y="284" class="d-sub" text-anchor="start" direction="rtl">نوبت پرریسک ← تماس انسانی، بیعانه یا رزرو مضاعف کنترل‌شده</text></svg></div>
+</div></section>
+
+<section class="sec-sm"><div class="wrap">
+  <div class="grid g-3">
+    <div class="card rv rv-d1"><div class="itile"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h11A2.5 2.5 0 0 1 19 7.5"/><rect x="3" y="7.5" width="18" height="12" rx="2.5"/><circle cx="16.5" cy="13.5" r="1.3"/></svg></div><h3 class="mb-8">بیعانه، مؤثرترین ابزار</h3>
+      <p>دریافت آنلاین بیعانه در لحظه‌ی تأیید رزرو. تفاوت نرخ غیبت با و بدون بیعانه را قبل و بعد اندازه می‌گیریم تا خودتان تصمیم بگیرید کجا اعمالش کنید.</p></div>
+    <div class="card rv rv-d2"><div class="itile"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M5 20v-3.5A2.5 2.5 0 0 1 7.5 14h9a2.5 2.5 0 0 1 2.5 2.5V20"/><path d="M7.5 14V6.5A2.5 2.5 0 0 1 10 4h4a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M4 20h16"/></svg></div><h3 class="mb-8">ظرفیت، کالای فاسدشدنی است</h3>
+      <p>نوبتی که امروز پر نشود، درآمدش برای همیشه رفته. لیست انتظار خودکار، بستن گپ تقویم و کمپین ظرفیت روز، همان ساعت‌ها را برمی‌گرداند.</p></div>
+    <div class="card rv rv-d3"><div class="itile"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4 11a8 8 0 0 1 13.7-5.6L20 7.6"/><path d="M20 4v4h-4"/><path d="M20 13a8 8 0 0 1-13.7 5.6L4 16.4"/><path d="M4 20v-4h4"/></svg></div><h3 class="mb-8">مشتری قدیمی، ارزان‌ترین مشتری</h3>
+      <p>یادآوری ویزیت دوره‌ای، تمدید و بازگرداندن مشتری خفته — بزرگ‌ترین منبع درآمدی که در بیشتر مراکز اصلاً به آن دست زده نشده است.</p></div>
+  </div>
+</div></section>
+
+<section class="sec-sm"><div class="wrap">
+  
+<div class="grid g-2 mb-40" style="align-items:start">
+  <div class="rv">
+    <div class="eyebrow"><span class="dot"></span>شفافیت</div>
+    <h2>هر عددی که می‌گوییم، قبل و بعدش را اندازه می‌گیریم</h2>
+  </div>
+  <div class="rv rv-d1"><p class="lead mb-16">نرخ اشغال، نرخ غیبت، نسبت لغو به غیبت، درصد جای خالی پرشده، درآمد به تفکیک خدمت و عملکرد هر ارائه‌دهنده — همه در گزارش هفتگی و ماهانه.</p><p class="lead mb-16">هشدار ناهنجاری هم فعال است: اگر نرخ اشغال یا غیبت به‌طور غیرعادی تغییر کند، پیش از اینکه در گزارش ماه بعد ببینیدش، خبردار می‌شوید.</p></div>
+</div>
+<div class="fig rv rv-d2"><div class="fig-cap">قیف نوبت</div><svg viewBox="0 40 700 280" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid meet" style="font-size:12.07px"><rect x="582" y="60" width="116" height="190" rx="18" fill="url(#pg)" opacity="0.30"/><rect x="582" y="60" width="116" height="190" rx="18" fill="none" stroke="url(#pg)" stroke-width="1.2" opacity=".5"/><text x="640" y="149.0" class="d-label" text-anchor="middle" style="font-size:20px" direction="ltr">۱۰۰</text><text x="640" y="169.0" class="d-sub" text-anchor="middle" direction="rtl">پیام ورودی</text><rect x="442" y="73" width="116" height="164" rx="18" fill="url(#pg)" opacity="0.27"/><rect x="442" y="73" width="116" height="164" rx="18" fill="none" stroke="url(#pg)" stroke-width="1.2" opacity=".5"/><text x="500" y="149.0" class="d-label" text-anchor="middle" style="font-size:20px" direction="ltr">۹۸</text><text x="500" y="169.0" class="d-sub" text-anchor="middle" direction="rtl">پاسخ داده‌شده</text><path d="M582 155.0 H 558" class="d-flow d-pulse" stroke="url(#flow1)" stroke-width="2.4" style="animation-delay:0.35s;animation-duration:3.4s"/><rect x="302" y="86" width="116" height="138" rx="18" fill="url(#pg)" opacity="0.23"/><rect x="302" y="86" width="116" height="138" rx="18" fill="none" stroke="url(#pg)" stroke-width="1.2" opacity=".5"/><text x="360" y="149.0" class="d-label" text-anchor="middle" style="font-size:20px" direction="ltr">۷۱</text><text x="360" y="169.0" class="d-sub" text-anchor="middle" direction="rtl">ارزیابی‌شده</text><path d="M442 155.0 H 418" class="d-flow d-pulse" stroke="url(#flow1)" stroke-width="2.4" style="animation-delay:0.7s;animation-duration:3.4s"/><rect x="162" y="99" width="116" height="112" rx="18" fill="url(#pg)" opacity="0.19"/><rect x="162" y="99" width="116" height="112" rx="18" fill="none" stroke="url(#pg)" stroke-width="1.2" opacity=".5"/><text x="220" y="149.0" class="d-label" text-anchor="middle" style="font-size:20px" direction="ltr">۳۴</text><text x="220" y="169.0" class="d-sub" text-anchor="middle" direction="rtl">سرنخ واجد شرایط</text><path d="M302 155.0 H 278" class="d-flow d-pulse" stroke="url(#flow1)" stroke-width="2.4" style="animation-delay:1.0499999999999998s;animation-duration:3.4s"/><rect x="22" y="112" width="116" height="86" rx="18" fill="url(#pg)" opacity="0.16"/><rect x="22" y="112" width="116" height="86" rx="18" fill="none" stroke="url(#pg)" stroke-width="1.2" opacity=".5"/><text x="80" y="149.0" class="d-label" text-anchor="middle" style="font-size:20px" direction="ltr">۱۹</text><text x="80" y="169.0" class="d-sub" text-anchor="middle" direction="rtl">معامله‌ی باز</text><path d="M162 155.0 H 138" class="d-flow d-pulse" stroke="url(#flow1)" stroke-width="2.4" style="animation-delay:1.4s;animation-duration:3.4s"/><text x="660" y="300" class="d-sub" text-anchor="start" direction="rtl">ورود ← ارزیابی ← تخصیص ← معامله؛ هر مرحله قابل اندازه‌گیری</text></svg></div>
+</div></section>
+
+<section class="sec" id="catalog"><div class="wrap">
+  <div class="sec-head center rv">
+    <div class="eyebrow"><span class="dot"></span>کاتالوگ فنی</div>
+    <h2>۲۹ ماژول، در پنج گروه</h2>
+    <p>از رزرو و کاهش غیبت تا پر کردن ظرفیت خالی، چرخه‌ی بازگشت مشتری و عملیات روزانه‌ی پذیرش.</p>
+    <div class="glass glass-pad mt-24" style="padding:14px 18px;display:flex;align-items:center;gap:12px">
+      <svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+      <input data-mod-search type="search" placeholder="جستجو در ماژول‌ها… مثلاً «یادآوری» یا «بیمه»"
+        style="flex:1;border:none;background:none;outline:none;font:inherit;color:var(--ink);padding:6px 0">
+    </div>
+  </div>
+  
+    <div class="flex aic gap-16 mb-16 rv" style="margin-top:48px">
+      <div class="itile itile-sm" style="margin-bottom:0"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/></svg></div>
+      <div>
+        <div class="flex aic gap-8"><span class="chip-code">۳.۱</span><h3 style="margin:0">رزرو</h3></div>
+      </div>
+    </div>
+    <p class="lead mb-24 rv" style="max-width:820px">هر رزروی که به مکالمه با منشی نیاز داشته باشد، در ساعت غیرکاری از دست می‌رود. رزرو باید در دل همان گفتگویی تمام شود که مشتری شروع کرده — بدون اپلیکیشن، بدون نصب، بدون فرم.</p>
+    
+<div class="tbl-wrap rv mb-24">
+  <div class="tbl-head">
+    <div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M3.5 5.8l1.2 1.2 2-2.2M3.5 11.8l1.2 1.2 2-2.2M3.5 17.8l1.2 1.2 2-2.2"/></svg></div>
+    <div><h3>رزرو</h3><p>7 ماژول در این گروه</p></div>
+  </div>
+  <div class="tbl-scroll">
+    <table class="mods">
+      <thead><tr><th>کد</th><th>ماژول</th><th>محرک</th><th>عملکرد</th><th>شاخص سنجش</th></tr></thead>
+      <tbody><tr><td class="m-code"><span class="chip-code">N-01</span></td><td class="m-name">رزرو گفتگومحور</td><td>درخواست نوبت</td><td>رزرو کامل در دل مکالمه‌ی طبیعی، بدون اپلیکیشن و بدون فرم</td><td class="m-kpi">نرخ تکمیل رزرو</td></tr><tr><td class="m-code"><span class="chip-code">N-02</span></td><td class="m-name">همگام‌سازی تقویم</td><td>هر رزرو یا لغو</td><td>تقویم پذیرش، پزشک و سیستم آنلاین همیشه یکی می‌مانند</td><td class="m-kpi">تعداد رزرو تکراری</td></tr><tr><td class="m-code"><span class="chip-code">N-03</span></td><td class="m-name">پاسخ پیش از رزرو</td><td>سؤال قبل از نوبت</td><td>پاسخ به قیمت، آدرس، پارکینگ، بیمه، مدت جلسه و شرایط قبل از اینکه سؤال به منشی برسد</td><td class="m-kpi">حجم تماس منشی</td></tr><tr><td class="m-code"><span class="chip-code">N-04</span></td><td class="m-name">رزرو چندجلسه‌ای</td><td>درمان دوره‌ای</td><td>رزرو کل دوره در یک مرحله با فاصله‌ی زمانی درست</td><td class="m-kpi">نرخ تکمیل دوره</td></tr><tr><td class="m-code"><span class="chip-code">N-05</span></td><td class="m-name">بیعانه و پیش‌پرداخت</td><td>تأیید رزرو</td><td>دریافت آنلاین بیعانه — مؤثرترین ابزار کاهش غیبت</td><td class="m-kpi">نرخ غیبت با و بدون بیعانه</td></tr><tr><td class="m-code"><span class="chip-code">N-06</span></td><td class="m-name">فرم پیش از مراجعه</td><td>پس از رزرو</td><td>دریافت سوابق، حساسیت‌ها و اطلاعات لازم قبل از حضور</td><td class="m-kpi">زمان پذیرش</td></tr><tr><td class="m-code"><span class="chip-code">N-07</span></td><td class="m-name">صف انتظار روز</td><td>مراجعه‌ی حضوری</td><td>مدیریت نوبت‌دهی همان روز و اعلام زمان تخمینی به مراجع</td><td class="m-kpi">زمان انتظار در محل</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+    <div class="flex aic gap-16 mb-16 rv" style="margin-top:48px">
+      <div class="itile itile-sm" style="margin-bottom:0"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6z"/><path d="M10.3 20a2 2 0 0 0 3.4 0"/></svg></div>
+      <div>
+        <div class="flex aic gap-8"><span class="chip-code">۳.۲</span><h3 style="margin:0">کاهش غیبت</h3></div>
+      </div>
+    </div>
+    <p class="lead mb-24 rv" style="max-width:820px">غیبت، تصادفی نیست — الگو دارد. نوبت‌های صبح زود، فاصله‌ی زیاد تا نوبت، سابقه‌ی غیبت قبلی و نوع خدمت، همگی قابل پیش‌بینی‌اند. وقتی بدانید کدام نوبت پرریسک است، فقط روی همان‌ها هزینه می‌کنید.</p>
+    
+<div class="tbl-wrap rv mb-24">
+  <div class="tbl-head">
+    <div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M3.5 5.8l1.2 1.2 2-2.2M3.5 11.8l1.2 1.2 2-2.2M3.5 17.8l1.2 1.2 2-2.2"/></svg></div>
+    <div><h3>کاهش غیبت</h3><p>6 ماژول در این گروه</p></div>
+  </div>
+  <div class="tbl-scroll">
+    <table class="mods">
+      <thead><tr><th>کد</th><th>ماژول</th><th>محرک</th><th>عملکرد</th><th>شاخص سنجش</th></tr></thead>
+      <tbody><tr><td class="m-code"><span class="chip-code">N-08</span></td><td class="m-name">سکانس یادآوری</td><td>فاصله تا نوبت</td><td>یادآوری در ۴۸ ساعت، ۲۴ ساعت و ۳ ساعت قبل، روی کانال ترجیحی با پشتیبان پیامکی</td><td class="m-kpi">نرخ غیبت</td></tr><tr><td class="m-code"><span class="chip-code">N-09</span></td><td class="m-name">تأیید با پاسخ</td><td>یادآوری ارسال‌شده</td><td>تأیید حضور با یک پاسخ ساده؛ عدم تأیید به‌عنوان ریسک علامت می‌خورد</td><td class="m-kpi">درصد نوبت تأییدشده</td></tr><tr><td class="m-code"><span class="chip-code">N-10</span></td><td class="m-name">لغو آسان</td><td>تصمیم به لغو</td><td>لغو بی‌دردسر و زودهنگام — لغو ۲۴ ساعت قبل قابل جبران است، غیبت ناگهانی نه</td><td class="m-kpi">نسبت لغو به غیبت</td></tr><tr><td class="m-code"><span class="chip-code">N-11</span></td><td class="m-name">امتیاز ریسک غیبت</td><td>زمان رزرو</td><td>پیش‌بینی احتمال غیبت بر اساس سابقه، نوع خدمت، فاصله‌ی زمانی و ساعت نوبت</td><td class="m-kpi">دقت پیش‌بینی</td></tr><tr><td class="m-code"><span class="chip-code">N-12</span></td><td class="m-name">مداخله‌ی هدفمند</td><td>نوبت پرریسک</td><td>برای موارد پرریسک: تماس انسانی، درخواست بیعانه یا رزرو مضاعف کنترل‌شده</td><td class="m-kpi">غیبت در گروه پرریسک</td></tr><tr><td class="m-code"><span class="chip-code">N-13</span></td><td class="m-name">سیاست غیبت</td><td>غیبت ثبت‌شده</td><td>اعمال خودکار قواعد: هشدار، هزینه یا محدودیت رزرو آنلاین برای متخلفان مکرر</td><td class="m-kpi">غیبت تکراری</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+    <div class="flex aic gap-16 mb-16 rv" style="margin-top:48px">
+      <div class="itile itile-sm" style="margin-bottom:0"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M5 20v-3.5A2.5 2.5 0 0 1 7.5 14h9a2.5 2.5 0 0 1 2.5 2.5V20"/><path d="M7.5 14V6.5A2.5 2.5 0 0 1 10 4h4a2.5 2.5 0 0 1 2.5 2.5V14"/><path d="M4 20h16"/></svg></div>
+      <div>
+        <div class="flex aic gap-8"><span class="chip-code">۳.۳</span><h3 style="margin:0">پر کردن ظرفیت خالی</h3></div>
+      </div>
+    </div>
+    <p class="lead mb-24 rv" style="max-width:820px">یک نوبتِ لغوشده که پر نشود، درآمدی است که همان روز برای همیشه از بین می‌رود. ظرفیت، کالای فاسدشدنی است.</p>
+    
+<div class="tbl-wrap rv mb-24">
+  <div class="tbl-head">
+    <div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M3.5 5.8l1.2 1.2 2-2.2M3.5 11.8l1.2 1.2 2-2.2M3.5 17.8l1.2 1.2 2-2.2"/></svg></div>
+    <div><h3>پر کردن ظرفیت خالی</h3><p>5 ماژول در این گروه</p></div>
+  </div>
+  <div class="tbl-scroll">
+    <table class="mods">
+      <thead><tr><th>کد</th><th>ماژول</th><th>محرک</th><th>عملکرد</th><th>شاخص سنجش</th></tr></thead>
+      <tbody><tr><td class="m-code"><span class="chip-code">N-14</span></td><td class="m-name">لیست انتظار خودکار</td><td>ظرفیت تکمیل</td><td>ثبت‌نام متقاضیان در لیست انتظار به‌جای از دست دادن آن‌ها</td><td class="m-kpi">اندازه‌ی لیست انتظار</td></tr><tr><td class="m-code"><span class="chip-code">N-15</span></td><td class="m-name">پرکردن جای خالی</td><td>لغو یا غیبت</td><td>اعلان آنی به لیست انتظار و واگذاری نوبت به اولین تأییدکننده</td><td class="m-kpi">درصد جای خالی پرشده</td></tr><tr><td class="m-code"><span class="chip-code">N-16</span></td><td class="m-name">بستن گپ تقویم</td><td>فاصله‌ی خالی در روز</td><td>شناسایی حفره‌های تقویم و پیشنهاد فعال آن‌ها به مراجعان مناسب</td><td class="m-kpi">نرخ اشغال تقویم</td></tr><tr><td class="m-code"><span class="chip-code">N-17</span></td><td class="m-name">کمپین ظرفیت روز</td><td>ظرفیت خالی امشب یا فردا</td><td>پیشنهاد هدفمند با انگیزه‌ی مالی برای پر کردن ظرفیت کوتاه‌مدت</td><td class="m-kpi">درآمد بازیابی‌شده</td></tr><tr><td class="m-code"><span class="chip-code">N-18</span></td><td class="m-name">مدیریت اضافه‌رزرو</td><td>الگوی غیبت شناخته‌شده</td><td>رزرو مضاعف حساب‌شده در بازه‌های پرریسک با مکانیزم کنترل ازدحام</td><td class="m-kpi">نرخ اشغال بدون ازدحام</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+    <div class="flex aic gap-16 mb-16 rv" style="margin-top:48px">
+      <div class="itile itile-sm" style="margin-bottom:0"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4 11a8 8 0 0 1 13.7-5.6L20 7.6"/><path d="M20 4v4h-4"/><path d="M20 13a8 8 0 0 1-13.7 5.6L4 16.4"/><path d="M4 20v-4h4"/></svg></div>
+      <div>
+        <div class="flex aic gap-8"><span class="chip-code">۳.۴</span><h3 style="margin:0">چرخه‌ی بازگشت مشتری</h3></div>
+      </div>
+    </div>
+    <p class="lead mb-24 rv" style="max-width:820px">بزرگ‌ترین منبع درآمدِ نادیده‌گرفته‌شده در کلینیک‌ها و مراکز خدماتی، مشتری‌هایی هستند که قبلاً آمده‌اند و کسی دیگر با آن‌ها تماس نگرفته است.</p>
+    
+<div class="tbl-wrap rv mb-24">
+  <div class="tbl-head">
+    <div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M3.5 5.8l1.2 1.2 2-2.2M3.5 11.8l1.2 1.2 2-2.2M3.5 17.8l1.2 1.2 2-2.2"/></svg></div>
+    <div><h3>چرخه‌ی بازگشت مشتری</h3><p>6 ماژول در این گروه</p></div>
+  </div>
+  <div class="tbl-scroll">
+    <table class="mods">
+      <thead><tr><th>کد</th><th>ماژول</th><th>محرک</th><th>عملکرد</th><th>شاخص سنجش</th></tr></thead>
+      <tbody><tr><td class="m-code"><span class="chip-code">N-19</span></td><td class="m-name">یادآوری ویزیت دوره‌ای</td><td>گذشت زمان از آخرین مراجعه</td><td>دعوت خودکار به ویزیت دوره‌ای — بزرگ‌ترین منبع درآمد نادیده‌گرفته‌شده</td><td class="m-kpi">نرخ بازگشت مشتری</td></tr><tr><td class="m-code"><span class="chip-code">N-20</span></td><td class="m-name">پیگیری پس از خدمت</td><td>۲۴ تا ۷۲ ساعت بعد</td><td>بررسی وضعیت، پاسخ به نگرانی و تشخیص زودهنگام نارضایتی قبل از تبدیل به نظر منفی</td><td class="m-kpi">نظر منفی عمومی</td></tr><tr><td class="m-code"><span class="chip-code">N-21</span></td><td class="m-name">یادآوری تمدید و تکرار</td><td>پایان دوره یا اتمام محصول</td><td>یادآوری تمدید درمان، تکرار خرید یا جلسه‌ی بعدی</td><td class="m-kpi">ارزش طول عمر مشتری</td></tr><tr><td class="m-code"><span class="chip-code">N-22</span></td><td class="m-name">بازگرداندن مشتری خفته</td><td>عدم مراجعه بالای چند ماه</td><td>کمپین بازگشت روی پایگاه مشتریان قدیمی</td><td class="m-kpi">مشتری فعال‌شده</td></tr><tr><td class="m-code"><span class="chip-code">N-23</span></td><td class="m-name">باشگاه وفاداری</td><td>تراکنش یا مراجعه</td><td>امتیاز، سطح و پاداش خودکار بدون کار دستی</td><td class="m-kpi">تکرار مراجعه</td></tr><tr><td class="m-code"><span class="chip-code">N-24</span></td><td class="m-name">جمع‌آوری نظر</td><td>پس از خدمت موفق</td><td>هدایت مشتریان راضی به نظر عمومی و ناراضی‌ها به مسیر رسیدگی داخلی</td><td class="m-kpi">تعداد و میانگین نظر عمومی</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+    <div class="flex aic gap-16 mb-16 rv" style="margin-top:48px">
+      <div class="itile itile-sm" style="margin-bottom:0"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5" rx="1"/><rect x="13" y="8" width="3" height="9" rx="1"/><rect x="18" y="5" width="0" height="0"/><path d="M7 9.5l3.5-3.5 3 3 4-4.5"/></svg></div>
+      <div>
+        <div class="flex aic gap-8"><span class="chip-code">۳.۵</span><h3 style="margin:0">عملیات روزانه</h3></div>
+      </div>
+    </div>
+    <p class="lead mb-24 rv" style="max-width:820px">تیم پذیرش هر صبح باید بداند امروز چه کسی می‌آید، چه کسی احتمالاً نمی‌آید و کدام پرونده نکته‌ای دارد. این بریفینگ نباید کار دستی کسی باشد.</p>
+    
+<div class="tbl-wrap rv mb-24">
+  <div class="tbl-head">
+    <div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h7"/><path d="M3.5 5.8l1.2 1.2 2-2.2M3.5 11.8l1.2 1.2 2-2.2M3.5 17.8l1.2 1.2 2-2.2"/></svg></div>
+    <div><h3>عملیات روزانه</h3><p>5 ماژول در این گروه</p></div>
+  </div>
+  <div class="tbl-scroll">
+    <table class="mods">
+      <thead><tr><th>کد</th><th>ماژول</th><th>محرک</th><th>عملکرد</th><th>شاخص سنجش</th></tr></thead>
+      <tbody><tr><td class="m-code"><span class="chip-code">N-25</span></td><td class="m-name">بریفینگ روز</td><td>هر صبح</td><td>فهرست نوبت‌های امروز با خلاصه‌ی پرونده و نکات هر مراجع برای تیم</td><td class="m-kpi">زمان آماده‌سازی روزانه</td></tr><tr><td class="m-code"><span class="chip-code">N-26</span></td><td class="m-name">صورتحساب و رسید</td><td>پایان خدمت</td><td>صدور خودکار صورتحساب، ارسال رسید و ثبت در سیستم حسابداری</td><td class="m-kpi">زمان کار مالی</td></tr><tr><td class="m-code"><span class="chip-code">N-27</span></td><td class="m-name">مدیریت بیمه</td><td>رزرو با بیمه</td><td>بررسی پوشش، اعلام سهم بیمار و مدارک لازم قبل از مراجعه</td><td class="m-kpi">اختلاف مالی در پذیرش</td></tr><tr><td class="m-code"><span class="chip-code">N-28</span></td><td class="m-name">گزارش عملکرد</td><td>هفتگی و ماهانه</td><td>نرخ اشغال، غیبت، درآمد به تفکیک خدمت و عملکرد هر ارائه‌دهنده</td><td class="m-kpi">تصمیم‌گیری مدیر</td></tr><tr><td class="m-code"><span class="chip-code">N-29</span></td><td class="m-name">هشدار ظرفیت</td><td>ناهنجاری</td><td>اعلان وقتی نرخ اشغال یا غیبت به‌طور غیرعادی تغییر کند</td><td class="m-kpi">زمان واکنش</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+</div></section>
+
+<section class="sec"><div class="wrap">
+  
+<div class="demo" data-demo data-only="booking">
+  <div class="rv">
+    <div class="eyebrow"><span class="dot"></span>دموی زنده</div>
+    <h2 class="mb-16">یک لغو، که به یک رزرو تبدیل می‌شود</h2>
+    <p class="lead mb-24">مراجع نوبتش را جابه‌جا می‌کند؛ جای خالی همان لحظه به لیست انتظار پیشنهاد می‌شود و پر می‌شود.</p>
+    <div class="grid" style="gap:14px">
+      <div class="frow"><div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M13.5 2.5L4.8 13.3a.6.6 0 0 0 .5 1h5.4l-1.2 7.2 8.7-10.8a.6.6 0 0 0-.5-1h-5.4z"/></svg></div>
+        <div><h4>پاسخ زیر شصت ثانیه</h4><p>اولین پاسخ، هوشمند و مرتبط با متنِ همان پیام — نه پیام آماده‌ی عمومی.</p></div></div>
+      <div class="frow"><div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-3.5"/><path d="M5.5 15A7.5 7.5 0 0 1 12 4.5 7.5 7.5 0 0 1 18.5 15"/></svg></div>
+        <div><h4>ارزیابی در دل مکالمه</h4><p>بودجه، نیاز، زمان‌بندی و اختیار تصمیم‌گیری — بدون حالت بازجویی.</p></div></div>
+      <div class="frow"><div class="itile itile-sm"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M8.5 11V5.5a1.7 1.7 0 0 1 3.4 0V11"/><path d="M11.9 10.5V4.6a1.7 1.7 0 0 1 3.4 0V11"/><path d="M15.3 11V6.6a1.7 1.7 0 0 1 3.4 0V14a7 7 0 0 1-7 7h-1a5 5 0 0 1-4.2-2.3L4 14.4a1.7 1.7 0 0 1 2.7-2l1.8 2"/></svg></div>
+        <div><h4>تحویل به انسان، هر لحظه</h4><p>گفتگو با خلاصه‌ی کامل به کارشناس می‌رسد؛ مشتری از اول توضیح نمی‌دهد.</p></div></div>
+    </div>
+    
+    <button class="lnk mt-24" data-replay><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4 11a8 8 0 0 1 13.7-5.6L20 7.6"/><path d="M20 4v4h-4"/><path d="M20 13a8 8 0 0 1-13.7 5.6L4 16.4"/><path d="M4 20v-4h4"/></svg> پخش دوباره</button>
+  </div>
+
+  <div class="rv rv-d2">
+    <div class="phone">
+      <div class="phone-top">
+        <div class="phone-av" data-icon="bot"></div>
+        <div style="flex:1">
+          <div class="phone-nm" data-bot-name>دستیار 9nagent</div>
+          <div class="phone-st" data-bot-channel>آنلاین</div>
+        </div>
+      </div>
+      <div class="phone-ch" data-chat></div>
+      <div class="phone-in">
+        <div class="fake">پیام خود را بنویسید…</div>
+        <div class="send" data-icon="send"></div>
+      </div>
+    </div>
+    <p class="xsmall muted center mt-16">این یک نمایش شبیه‌سازی‌شده از یک گفتگوی واقعی است.</p>
+  </div>
+</div>
+
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sec-head center rv">
+    <div class="eyebrow"><span class="dot"></span>بسته‌بندی</div>
+    <h2>سه سطح — از رزرو ساده تا مدیریت کامل ظرفیت</h2>
+    <p>در این محصول، محاسبه‌ی بازگشت سرمایه ساده‌تر از بقیه است: نرخ غیبت فعلی × تعداد نوبت ماهانه × ارزش هر نوبت.</p>
+  </div>
+  <div class="grid g-3"><div class="card tier rv">
+  <div class="t-name">پایه</div>
+  <div class="t-for">مطب‌ها و مراکز کوچک که هنوز رزرو را تلفنی مدیریت می‌کنند.</div>
+  <div class="t-price gtext">راه‌اندازی + نگهداری ماهانه</div>
+  <div class="t-note">روی یک کانال، با تقویم موجود شما.</div>
+  <ul><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>رزرو گفتگومحور بدون اپلیکیشن</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>پاسخ به سؤالات پیش از رزرو</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>همگام‌سازی تقویم پذیرش و ارائه‌دهنده</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>سکانس یادآوری ۴۸ / ۲۴ / ۳ ساعت</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>تأیید با یک پاسخ و لغو آسان</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>بریفینگ روزانه‌ی تیم</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>آموزش تیم و مستندسازی</span></li></ul>
+  <a href="contact.html" class="btn btn-glass btn-block">دریافت قیمت</a>
+</div><div class="card tier tier-pop card-hl rv"><div class="tier-badge">بیشترین انتخاب</div>
+  <div class="t-name">حرفه‌ای</div>
+  <div class="t-for">کلینیک‌ها و مراکزی که غیبت و صندلی خالی برایشان عدد بزرگی است.</div>
+  <div class="t-price gtext">راه‌اندازی + نگهداری ماهانه</div>
+  <div class="t-note">سطحی که بیشترین درآمد بازیابی‌شده را می‌سازد.</div>
+  <ul><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>همه‌ی موارد سطح پایه</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>امتیاز ریسک غیبت و مداخله‌ی هدفمند</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>بیعانه و پیش‌پرداخت آنلاین</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>لیست انتظار خودکار و پرکردن جای خالی</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>بستن گپ تقویم و کمپین ظرفیت روز</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>رزرو چندجلسه‌ای و فرم پیش از مراجعه</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>پیگیری پس از خدمت و جمع‌آوری نظر</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>گزارش عملکرد هفتگی و ماهانه</span></li></ul>
+  <a href="contact.html" class="btn btn-primary btn-block">دریافت قیمت</a>
+</div><div class="card tier rv">
+  <div class="t-name">سازمانی</div>
+  <div class="t-for">مراکز چندشعبه‌ای یا چند ارائه‌دهنده با سیستم داخلی موجود.</div>
+  <div class="t-price gtext">راه‌اندازی + نگهداری ماهانه</div>
+  <div class="t-note">شامل اتصال به سیستم‌های داخلی و ماژول‌های اختصاصی.</div>
+  <ul><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>همه‌ی موارد سطح حرفه‌ای</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>چرخه‌ی کامل بازگشت مشتری و باشگاه وفاداری</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>مدیریت بیمه و اعلام سهم بیمار پیش از مراجعه</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>صورتحساب و اتصال به سیستم حسابداری</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>مدیریت اضافه‌رزرو با کنترل ازدحام</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>سیاست غیبت خودکار برای متخلفان مکرر</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>هشدار ظرفیت و تشخیص ناهنجاری</span></li><li><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg><span>تاب‌آوری کانال و مالکیت کامل داده</span></li></ul>
+  <a href="contact.html" class="btn btn-glass btn-block">دریافت قیمت</a>
+</div></div>
+</div></section>
+
+
+<section class="sec">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <h2>نرخ غیبتتان را بگویید، بقیه‌اش حساب است</h2>
+      <p>با تعداد نوبت ماهانه و ارزش هر نوبت، همان جلسه‌ی اول عدد بازگشت سرمایه را با هم حساب می‌کنیم.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">رزرو جلسه‌ی اسکوپ <svg class="ico arrow-r" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+        <a href="about.html" class="btn btn-glass btn-lg">چرا 9nagent</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M12 3.2l7.2 4.2v9.2L12 20.8 4.8 16.6V7.4z"/><path d="M12 8.2a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 3.2-3.2c0-2.6-1.6-3.2-3.2-3.2z"/><path d="M14.6 13.4l-2.4 4.2"/></svg></span>
+          <span class="logo-word">9nagent</span>
+        </a>
+        <p>آژانس اتوماسیون هوش مصنوعی. سیستم‌هایی می‌سازیم که سرنخ را از دست نمی‌دهند، وقت مشاور را آزاد می‌کنند و صندلی خالی را پر می‌کنند — روی زیرساخت داخلی و به زبان فارسی.</p>
+        <div class="foot-social">
+          <a href="https://wa.me/989017550844" target="_blank" rel="noopener" aria-label="واتساپ"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M3.5 20.5l1.3-4.4A8.2 8.2 0 1 1 8 19.3z"/><path d="M8.9 9.2c.4-.9.8-.8 1.2-.8h.6c.2 0 .5 0 .7.6l.8 2c.1.3 0 .5-.1.7l-.5.6c-.2.2-.3.4-.1.7a7 7 0 0 0 3.1 2.7c.3.1.5.1.7-.1l.7-.8c.2-.2.4-.2.6-.1l1.9 1c.3.1.4.3.4.5 0 .8-.6 1.7-1.4 1.9-1 .3-2.3.2-4.5-1a11 11 0 0 1-4-4.2c-.5-1-.7-2.3-.1-3.7z"/></svg></a>
+          <a href="https://t.me/nineagent" target="_blank" rel="noopener" aria-label="تلگرام"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M21 4.5L2.8 11.4c-.7.3-.7 1.2 0 1.4l4.6 1.5 1.7 5.2c.2.6 1 .7 1.4.2l2.4-2.6 4.6 3.4c.5.4 1.2.1 1.4-.5L22.4 5.6c.2-.8-.6-1.4-1.4-1.1z"/><path d="M7.4 14.3L18.2 7 10 15.1l-.2 3.6"/></svg></a>
+          <a href="https://instagram.com/9nagent" target="_blank" rel="noopener" aria-label="اینستاگرام"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg></a>
+          <a href="mailto:hello@9nagent.ir" aria-label="ایمیل"><svg class="ico" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="3"/><path d="M3.5 7.5l7.6 5a1.6 1.6 0 0 0 1.8 0l7.6-5"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>محصول‌ها</h5>
+        <a href="lead-engine.html">موتور جذب و ارزیابی سرنخ</a>
+        <a href="advisor-assistant.html">دستیار مشاور</a>
+        <a href="booking-assistant.html">نوبت‌دهی و کاهش غیبت</a>
+      </div>
+      <div class="foot-col">
+        <h5>شرکت</h5>
+        <a href="about.html">چرا 9nagent</a>
+        <a href="about.html#process">فرآیند اجرا</a>
+        <a href="about.html#honesty">آنچه وعده نمی‌دهیم</a>
+        <a href="contact.html">تماس با ما</a>
+      </div>
+      <div class="foot-col">
+        <h5>شروع کنید</h5>
+        <p class="small">یک جلسه‌ی ۲۰ دقیقه‌ای. با عددهای خودتان حساب می‌کنیم که این سیستم برایتان صرف می‌کند یا نه.</p>
+        <a href="contact.html" class="btn btn-primary btn-sm mt-16">رزرو جلسه <svg class="ico arrow-r" viewBox="0 0 24 24" stroke="url(#pg)" aria-hidden="true"><path d="M19 12H5"/><path d="M11 6l-6 6 6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© ۱۴۰۵ 9nagent — همه‌ی حقوق محفوظ است.</span>
+      <span class="ltr small">9nagent</span>
+    </div>
+  </div>
+</footer>
+
+<div class="float-cta">
+  <a href="https://wa.me/989017550844" target="_blank" rel="noopener" class="float-btn float-wa" aria-label="واتساپ">
+    <svg class="ico" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.7"><path d="M3.5 20.5l1.3-4.4A8.2 8.2 0 1 1 8 19.3z"/><path d="M8.9 9.2c.4-.9.8-.8 1.2-.8h.6c.2 0 .5 0 .7.6l.8 2c.1.3 0 .5-.1.7l-.5.6c-.2.2-.3.4-.1.7a7 7 0 0 0 3.1 2.7c.3.1.5.1.7-.1l.7-.8c.2-.2.4-.2.6-.1l1.9 1c.3.1.4.3.4.5 0 .8-.6 1.7-1.4 1.9-1 .3-2.3.2-4.5-1a11 11 0 0 1-4-4.2c-.5-1-.7-2.3-.1-3.7z"/></svg>
+  </a>
+  <a href="https://t.me/nineagent" target="_blank" rel="noopener" class="float-btn float-tg" aria-label="تلگرام">
+    <svg class="ico" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.7"><path d="M21 4.5L2.8 11.4c-.7.3-.7 1.2 0 1.4l4.6 1.5 1.7 5.2c.2.6 1 .7 1.4.2l2.4-2.6 4.6 3.4c.5.4 1.2.1 1.4-.5L22.4 5.6c.2-.8-.6-1.4-1.4-1.1z"/><path d="M7.4 14.3L18.2 7 10 15.1l-.2 3.6"/></svg>
+  </a>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/demo.js"></script>
+</body>
+</html>
